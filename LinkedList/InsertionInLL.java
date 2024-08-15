@@ -40,7 +40,7 @@ public class InsertionInLL {
 		}
 		
 
-		Node1 temp =head;
+		Node1 temp = head;
 		while(temp.next != null) {
 			temp = temp.next;
 		}
@@ -55,14 +55,16 @@ public class InsertionInLL {
 	// 3. Insertion at K Position
 	public static Node1 insertAtK(Node1 head, int element, int k) {
 		if(head == null) {
+			// create new node, but only valid for k == 1
+			// if nothing is there just return the head or null of LL
 			if(k == 1) {
 				return new Node1(element);
 			}
 			else {
-				return head;
+				return head;  
 			}
 		}
-		
+		// if it state that position in ar 1st index 
 		if(k == 1) {
 			// head is now change to take new head
 			return new Node1(element,head);
@@ -73,13 +75,18 @@ public class InsertionInLL {
 		while(temp != null) {
 			cnt++;
 			
-			//to add new node
-			if(cnt == (k -1)) {
-				
+			//to add new node, if my counter just behing k otherwise we just move to next again next
+			if(cnt == (k - 1)) {
+				// stop before kth element i.e temp
+				// create new node, and then point temp to that new node -> and new node to next wala element of newNode
 				Node1 x = new Node1(element, temp.next);
+				// we can't directly break the chain after we create new node, otherwise the link will break, 
+				// so to avoid that first we have to make link between new node (x) and temp.next, so after point temp to new node
+				// and then break with the node where it point 
 				temp.next = x;
 				break;
 			}
+			
 			temp = temp.next;
 		}
 		
@@ -88,6 +95,7 @@ public class InsertionInLL {
 	
 	
 	// 4. Insertion at before value
+	// Explanation as the same as 3., but instead of cnt we used head.data
 	public static Node1 insertAtBeforeValue(Node1 head, int element, int value) {
 		if(head == null) {
 			return null;
