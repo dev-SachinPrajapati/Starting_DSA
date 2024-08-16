@@ -24,8 +24,8 @@ public class Quick_Sort {
 	        }
 	        //it is used to put the pivot at right where we have one empty place(index)
 	        int temp = arr.get(low);
-            arr.set(low, arr.get(j));
-            arr.set(j, temp);
+            	arr.set(low, arr.get(j));
+            	arr.set(j, temp);
 	        return j;
 	    }
 	 public static void quickSort(List<Integer> arr, int low,int high ){
