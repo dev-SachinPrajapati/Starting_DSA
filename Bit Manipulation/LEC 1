@@ -1,0 +1,28 @@
+https://www.naukri.com/code360/problems/bit-manipulation_8142533?count=25&page=1&search=&sort_entity=order&sort_order=ASC
+
+public class Solution {
+    public static int[] bitManipulation(int num, int i) {
+        // Write your code here.
+        int n[] = new int[3];
+        int bit;
+        if ((num & 1 << i - 1) == 0) {
+            bit = 0;
+        } else {
+            bit = 1;
+        }
+        n[0] = bit;
+        n[1] = num | (1 << i - 1);
+        n[2] = num & (~(1 << i - 1));
+
+        return n;
+    }
+}
+
+/*
+ * n[0] stores the value of the bit at position i.
+ * n[1] stores the result of setting the bit at position i to 1 in num using
+ * bitwise OR (|).
+ * n[2] stores the result of clearing the bit at position i in num (setting it
+ * to 0) using bitwise AND (&) with the complement of 1 left-shifted by i-1
+ * positions.
+ */
