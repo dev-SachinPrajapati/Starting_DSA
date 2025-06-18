@@ -12,8 +12,8 @@ public class Lec5 {
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-			Lec5 l5 = new Lec5();
-			int n = 21;
+		Lec5 l5 = new Lec5();
+		int n = 21;
 		 System.out.println(l5.recur(n));
 	}
 
